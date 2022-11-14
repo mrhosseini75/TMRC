@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UML graph &mdash; Topological_map_robot_control 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="rqt graph" href="rqt_graph.html" />
+    <link rel="prev" title="Software architecture" href="software_architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Topological_map_robot_control
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="software_architecture.html">Software architecture</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">UML graph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#robot-state-node">1. Robot state node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#motion-controller">2. Motion Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#motion-planner">3. Motion Planner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#armor">4. aRMOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finite-state-machine">5. Finite state machine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rqt_graph.html">rqt graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Temporal_diagram.html">Temporal diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="map.html">Map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripts.html">Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="armor.html">aRMOR</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Topological_map_robot_control</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="software_architecture.html">Software architecture</a></li>
+      <li class="breadcrumb-item active">UML graph</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/UML_graph.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="uml-graph">
+<h1>UML graph<a class="headerlink" href="#uml-graph" title="Permalink to this heading"></a></h1>
+<a class="reference internal image-reference" href="_images/sofar.jpg"><img alt="sofar.jpg" class="align-center" src="_images/sofar.jpg" style="width: 1000px;" /></a>
+<dl class="simple">
+<dt>The software structure is divided into 5 important parts:</dt><dd><ol class="arabic simple">
+<li><p>Robot state</p></li>
+<li><p>Motion Controller</p></li>
+<li><p>Motion Planner</p></li>
+<li><p>aRMOR</p></li>
+<li><p>Finite state machine</p></li>
+</ol>
+</dd>
+</dl>
+<div class="section" id="robot-state-node">
+<h2>1. Robot state node<a class="headerlink" href="#robot-state-node" title="Permalink to this heading"></a></h2>
+<p>Consisting of a node that allows the client to use the <code class="docutils literal notranslate"><span class="pre">GET_POSE</span></code> and <code class="docutils literal notranslate"><span class="pre">SET_POSE</span></code> service and communicate with other nodes.</p>
+</div>
+<div class="section" id="motion-controller">
+<h2>2. Motion Controller<a class="headerlink" href="#motion-controller" title="Permalink to this heading"></a></h2>
+<p>It is built by two controller_client and controller nodes to move the robot between different locations.</p>
+</div>
+<div class="section" id="motion-planner">
+<h2>3. Motion Planner<a class="headerlink" href="#motion-planner" title="Permalink to this heading"></a></h2>
+<p>It is built by two planner_client and planner nodes to generate a map of points to switch from one room to another (points are defined inside the map / see map section).</p>
+</div>
+<div class="section" id="armor">
+<h2>4. aRMOR<a class="headerlink" href="#armor" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>Armor package is built from 6 nodes which allows me to do:</dt><dd><ol class="arabic simple">
+<li><p>Manipulation in ontology map</p></li>
+<li><p>Query from ontology map</p></li>
+<li><p>Exception on ontology map</p></li>
+<li><p>Architecture name mapper for each node via name_tag</p></li>
+</ol>
+</dd>
+</dl>
+<p>For more information on armor package then refer to this <a class="reference external" href="https://github.com/buoncubi/armor_py_api">link</a>.</p>
+</div>
+<div class="section" id="finite-state-machine">
+<h2>5. Finite state machine<a class="headerlink" href="#finite-state-machine" title="Permalink to this heading"></a></h2>
+<p>Inside this node, most of the functions have been defined and it allows me to view the robot status via <strong>GUI SMACH viewer</strong></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="software_architecture.html" class="btn btn-neutral float-left" title="Software architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rqt_graph.html" class="btn btn-neutral float-right" title="rqt graph" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Mohammad reza Haji Hosseini.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
