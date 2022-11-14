@@ -76,6 +76,23 @@ rqt graph
 `/finite_state_machine` node starts listing the rooms that have not been visited in a long time, consider the first room in the list as the `/target_point` post message to `/motion/palnner`. planner builds a `/path` and publishes it to `/motion/controller`. Controller will bring robot to destination and `/finit_state_machine` node will update `/smach_viewer`.<br/>
 The messages communicated between the nodes are done through the `GET_POSE` and `SET_POSE` service defined in `/robot_state` node.
 
+Temporal diagram
+=================
+<p align="center">
+<img width="800" src="https://user-images.githubusercontent.com/80394968/201729691-faa70232-5035-4d87-94e1-48de4461ad64.jpg" alt="800">
+</p>
+</p>
+<p align="center">
+temporal diagram 
+</p>
+
+At the beginning Launch file topological_map_robot_control.launch, starts six nodes and one armor service. The service works directly with the FSM node and the topological_map.owl map. The service allows the FSM node to modify, check, and load the topological_map.owl map.
+
+In addition Launch file sets the size of the environment at the planner node and the initial position of the robot in the environment at the controller_client node. Parameters were used to set the values.
+
+FSM node publish \target_point to planner_client. Planner make a path to use different point to reach goal and publish \path to controller_client node.
+
+Nodes in pairs like MOTION PLANNER and MOTION CONTROLLER start working with each other through SimpleAction. The first node has role of server and the second node has role of client, client uses CALLBACK to connect to server and server uses FEEDBACK to control status of client.
 
 Usage
 ========
