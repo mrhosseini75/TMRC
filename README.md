@@ -30,7 +30,7 @@ Software architecture
 ========================
 
 <p align="center">
-<img width="800" src="https://user-images.githubusercontent.com/80394968/200872645-39930952-f77e-431c-bf6d-40ce55921e76.png" alt="800">
+<img width="800" src="https://user-images.githubusercontent.com/80394968/201729118-e406b565-b455-427e-ae00-a60402febd81.jpg" alt="800">
 </p>
 <p align="center">
 UML graph
@@ -66,7 +66,7 @@ rqt graph
 ===========
 
 <p align="center">
-<img width="800" src="https://user-images.githubusercontent.com/80394968/200875398-dfb34932-7820-4f29-a79c-305755bf4e05.png" alt="800">
+<img width="800" src="https://user-images.githubusercontent.com/80394968/201729229-b924a3cf-628f-4e8b-bee4-66fa636f2aea.png" alt="800">
 </p>
 </p>
 <p align="center">
