@@ -2,7 +2,7 @@
 
 _First assignment of experimental robot laboratoy._
 
-Intriduction
+Introduction
 ==============
 Main idea of building a robot that changes position from one location to another and during movement consumes the battery and must return to the initial location to recharge. The robot has to visit all locations, so you need to record the time when it passes away from one location.
 <p align="center">
